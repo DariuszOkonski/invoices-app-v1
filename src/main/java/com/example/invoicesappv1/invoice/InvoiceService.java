@@ -24,6 +24,12 @@ public class InvoiceService {
                         LocalDate.of(2021, Month.MARCH, 5),
                         new Supplier(2L, "Moovem Sp. z o.o", "Al. Jerozolimskie 100. 00-807 Warszawa"),
                         new BigDecimal(32987.00)
+                ),
+                new Invoice(
+                        3L,
+                        LocalDate.of(2021, Month.APRIL, 7),
+                        new Supplier(2L, "Moovem Sp. z o.o", "Al. Jerozolimskie 100. 00-807 Warszawa"),
+                        new BigDecimal(110000.00)
                 )
         );
     }
