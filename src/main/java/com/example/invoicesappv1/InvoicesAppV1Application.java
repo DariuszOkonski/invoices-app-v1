@@ -22,14 +22,7 @@ public class InvoicesAppV1Application {
 		SpringApplication.run(InvoicesAppV1Application.class, args);
 	}
 
-//	@GetMapping
-//	public List<Role> getRoles() {
-//		return List.of(
-//				new Role(1L, "admin"),
-//				new Role(2L, "user"),
-//				new Role(3L, "guest")
-//		);
-//	}
+
 
 //	@GetMapping
 //	public List<Supplier> getSuppliers() {
