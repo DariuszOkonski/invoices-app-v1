@@ -10,12 +10,14 @@ import java.util.List;
 @RequestMapping(value = "/api/v1/roles")
 public class RoleController {
 
-    @GetMapping
+	private final RoleService roleService;
+
+	public RoleController(RoleService roleService) {
+		this.roleService = roleService;
+	}
+
+	@GetMapping
 	public List<Role> getRoles() {
-		return List.of(
-				new Role(1L, "admin"),
-				new Role(2L, "user"),
-				new Role(3L, "guest")
-		);
+		return this.roleService.getRoles();
 	}
 }
