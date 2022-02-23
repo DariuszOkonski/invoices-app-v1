@@ -25,9 +25,21 @@ public class RoleService {
         Optional<Role> roleOptional = this.roleRepository.findRoleByName(role.getName());
 
         if(roleOptional.isPresent()) {
+            // TODO - implement own exception
             throw new IllegalStateException("role is taken");
         }
 
         this.roleRepository.save(role);
+    }
+
+    public void deleteRole(Long id) {
+        Optional<Role> roleOptional = this.roleRepository.findRoleById(id);
+
+        if(roleOptional.isEmpty()) {
+            // TODO - implement own exception
+            throw new IllegalStateException("role does not exists");
+        }
+
+        this.roleRepository.deleteById(id);
     }
 }

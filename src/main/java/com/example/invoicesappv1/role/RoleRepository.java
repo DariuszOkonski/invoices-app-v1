@@ -11,4 +11,7 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
 
     @Query("SELECT r FROM Role r WHERE r.name = ?1")
     Optional<Role> findRoleByName(String name);
+
+    @Query("SELECT r FROM Role r WHERE r.id = ?1")
+    Optional<Role> findRoleById(Long id);
 }

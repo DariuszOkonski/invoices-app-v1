@@ -25,4 +25,9 @@ public class RoleController {
 	public void addRole(@RequestBody Role role) {
 		this.roleService.addRole(role);
 	}
+
+	@DeleteMapping(path = "{id}")
+	public void deleteRole(@PathVariable("id") Long id) {
+		this.roleService.deleteRole(id);
+	}
 }
