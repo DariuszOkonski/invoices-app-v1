@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+// Properties Files - connect to db
+
 @RestController
 @RequestMapping(value = "/api/v1/roles")
 public class RoleController {

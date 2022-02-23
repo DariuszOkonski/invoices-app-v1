@@ -9,9 +9,9 @@ public class RoleService {
 
     public List<Role> getRoles() {
         return List.of(
-                new Role(1L, "admin"),
-                new Role(2L, "user"),
-                new Role(3L, "guest")
+                new Role(1L, "admin", true, true, true, true),
+                new Role(2L, "user", true, true, true, false),
+                new Role(3L, "guest", true, false, false, false)
         );
     }
 }
