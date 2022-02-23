@@ -21,4 +21,9 @@ public class InvoiceService {
     public List<Invoice> getInvoices() {
         return this.invoiceRepository.findAll();
     }
+
+    public void addInvoice(Invoice invoice) {
+
+        this.invoiceRepository.save(invoice);
+    }
 }
