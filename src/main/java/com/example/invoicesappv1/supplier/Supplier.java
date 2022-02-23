@@ -1,6 +1,20 @@
 package com.example.invoicesappv1.supplier;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Supplier {
+    @Id
+    @SequenceGenerator(
+            name = "supplier_sequence",
+            sequenceName = "supplier_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "supplier_sequence"
+    )
     private Long id;
     private String name;
     private String address;
