@@ -16,19 +16,19 @@ public class InvoiceService {
                 new Invoice(
                         1L,
                         LocalDate.of(2022, Month.FEBRUARY, 2),
-                        new Supplier(1L, "Infinite Sp. z o.o", "ul.Projektowa 1, 20-209 Lublin"),
+                        1L,
                         new BigDecimal(11289.00)
                 ),
                 new Invoice(
                         2L,
                         LocalDate.of(2021, Month.MARCH, 5),
-                        new Supplier(2L, "Moovem Sp. z o.o", "Al. Jerozolimskie 100. 00-807 Warszawa"),
+                        2L,
                         new BigDecimal(32987.00)
                 ),
                 new Invoice(
                         3L,
                         LocalDate.of(2021, Month.APRIL, 7),
-                        new Supplier(2L, "Moovem Sp. z o.o", "Al. Jerozolimskie 100. 00-807 Warszawa"),
+                        2L,
                         new BigDecimal(110000.00)
                 )
         );

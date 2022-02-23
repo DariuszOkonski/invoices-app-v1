@@ -8,22 +8,27 @@ import java.time.LocalDate;
 public class Invoice {
     private Long id;
     private LocalDate createdAt;
-    private Supplier supplier;
+    private Long supplierId;
     private BigDecimal amount;
 
     public Invoice() {
     }
 
-    public Invoice(Long id, LocalDate createdAt, Supplier supplier, BigDecimal amount) {
+    public Invoice(Long id,
+                   LocalDate createdAt,
+                   Long supplierId,
+                   BigDecimal amount) {
         this.id = id;
         this.createdAt = createdAt;
-        this.supplier = supplier;
+        this.supplierId = supplierId;
         this.amount = amount;
     }
 
-    public Invoice(LocalDate createdAt, Supplier supplier, BigDecimal amount) {
+    public Invoice(LocalDate createdAt,
+                   Long supplierId,
+                   BigDecimal amount) {
         this.createdAt = createdAt;
-        this.supplier = supplier;
+        this.supplierId = supplierId;
         this.amount = amount;
     }
 
@@ -43,12 +48,12 @@ public class Invoice {
         this.createdAt = createdAt;
     }
 
-    public Supplier getSupplier() {
-        return supplier;
+    public Long getSupplierId() {
+        return supplierId;
     }
 
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
     }
 
     public BigDecimal getAmount() {
@@ -64,7 +69,7 @@ public class Invoice {
         return "Invoice{" +
                 "id=" + id +
                 ", createdAt=" + createdAt +
-                ", supplier=" + supplier +
+                ", supplierId=" + supplierId +
                 ", amount=" + amount +
                 '}';
     }
