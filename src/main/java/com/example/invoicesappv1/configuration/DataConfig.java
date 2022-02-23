@@ -1,5 +1,7 @@
 package com.example.invoicesappv1.configuration;
 
+import com.example.invoicesappv1.invoice.Invoice;
+import com.example.invoicesappv1.invoice.InvoiceRepository;
 import com.example.invoicesappv1.role.Role;
 import com.example.invoicesappv1.role.RoleRepository;
 import com.example.invoicesappv1.supplier.Supplier;
@@ -8,6 +10,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 
 @Configuration
@@ -16,7 +21,8 @@ public class DataConfig {
     @Bean
     CommandLineRunner commandLineRunner(
             RoleRepository roleRepository,
-            SupplierRepository supplierRepository
+            SupplierRepository supplierRepository,
+            InvoiceRepository invoiceRepository
     ) {
         return args -> {
 
@@ -24,6 +30,7 @@ public class DataConfig {
 
             supplierRepositoryPropagation(supplierRepository);
 
+            invoiceRepositoryPropagation(invoiceRepository);
         };
     }
 
@@ -70,5 +77,31 @@ public class DataConfig {
                 "ul.Bracka 15, 32-302 Kraków");
 
         supplierRepository.saveAll(List.of(infinite, moovem, divante, comarch));
+    }
+
+    private void invoiceRepositoryPropagation(InvoiceRepository invoiceRepository) {
+
+        Invoice invoice1 = new Invoice(
+                LocalDate.of(2022, Month.FEBRUARY, 2),
+                1L,
+                new BigDecimal(11289.00)
+        );
+        Invoice invoice2 = new Invoice(
+                LocalDate.of(2021, Month.MARCH, 5),
+                2L,
+                new BigDecimal(32987.00)
+        );
+        Invoice invoice3 = new Invoice(
+                LocalDate.of(2021, Month.APRIL, 7),
+                2L,
+                new BigDecimal(110000.00)
+        );
+        Invoice invoice4 = new Invoice(
+                LocalDate.of(2021, Month.NOVEMBER, 12),
+                3L,
+                new BigDecimal(293212.00)
+        );
+
+        invoiceRepository.saveAll(List.of(invoice1, invoice2, invoice3, invoice4));
     }
 }
