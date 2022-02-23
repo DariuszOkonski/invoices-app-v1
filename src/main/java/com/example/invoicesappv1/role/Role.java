@@ -17,10 +17,10 @@ public class Role {
     )
     private Long id;
     private String name;
-    private boolean readRole;
-    private boolean createRole;
-    private boolean updateRole;
-    private boolean deleteRole;
+    private Boolean readRole;
+    private Boolean createRole;
+    private Boolean updateRole;
+    private Boolean deleteRole;
 
     public Role() {
     }
