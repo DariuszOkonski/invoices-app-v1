@@ -1,9 +1,23 @@
 package com.example.invoicesappv1.invoice;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Invoice {
+
+    @Id
+    @SequenceGenerator(
+            name = "invoice_sequence",
+            sequenceName = "invoice_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "invoice_sequence"
+    )
     private Long id;
     private LocalDate createdAt;
     private Long supplierId;
